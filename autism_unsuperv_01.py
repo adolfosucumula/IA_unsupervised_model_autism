@@ -43,7 +43,7 @@ def normalized_data (df,t):
 # 1st step database opening
 # MY CLASSES 
 from read_database import ReadDatabase as DB
-db = DB().getDatabase("/Users/Feti/Desktop/VBOX-001/PythonIAScript/CLASS/Autism_screening dataset.arff");
+db = DB().getDatabase("Autism_screening dataset.arff");
 
 df = pd.read_csv(db)
 
@@ -155,6 +155,7 @@ from sklearn import metrics
 metrics.v_measure_score(y_pred, target)
 
 plt.scatter(X.iloc[:,0], X.iloc[:, 15], c=y_pred)
+heatmap.set_title('Features Correlating with Gender', fontdict={'fontsize':18}, pad=16);
 plt.show()
 
 from sklearn.metrics import confusion_matrix, accuracy_score
